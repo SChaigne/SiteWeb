@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class accesBD
 	{
@@ -100,20 +100,23 @@ class accesBD
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//---------------------------CREATION DE LA REQUETE D'INSERTION Client-------------------------------------------------------------------------------------------------------------------------------------------------
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	public function insertClient($unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement, $unLoginClient, $unPwdClient)
+	public function insertClient($unIdClient ,$unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement, $unLoginClient, $unPwdClient)
 		{
 		//génération automatique de l'identifiant
 		$sonId = $this->donneProchainIdentifiant("client","idClient");
 
-		$requete = $this->conn->prepare("INSERT INTO CLIENT (nomClient, prenomClient, emailClient, dateAbonnementClient, loginClient, pwdClient, actif) VALUES (?,?,?,?,?,?,?)");
+		$requete = $this->conn->prepare("INSERT INTO CLIENT (idClient ,nomClient, prenomClient, emailClient, dateAbonnementClient, loginClient, pwdClient, actif) VALUES (?,?,?,?,?,?,?,?)");
 		//définition de la requête SQL
-		$requete->bindValue(1,$unNomClient);
-		$requete->bindValue(2,$unPrenomClient);
-		$requete->bindValue(3,$unEmailClient);
-		$requete->bindValue(4,$uneDateAbonnement);
-		$requete->bindValue(5,$unLoginClient);
-		$requete->bindValue(6,$unPwdClient);
+		$requete->bindValue(1,$sonId);
+		$requete->bindValue(2,$unNomClient);
+		$requete->bindValue(3,$unPrenomClient);
+		$requete->bindValue(4,$unEmailClient);
+		$requete->bindValue(5,$uneDateAbonnement);
+		$requete->bindValue(6,$unLoginClient);
+		$requete->bindValue(7,$unPwdClient);
+		$requete->bindValue(8,0);
 
+		echo " Je suis accesBD++";
 
 		//exécution de la requête SQL
 		if(!$requete->execute())
