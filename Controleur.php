@@ -102,8 +102,13 @@ class Controleur
 			//CAS ajouter un utilisateur ------------------------------------------------------------------------------
 			case 'nouveauLogin' :
 				// ici il faut pouvoir recuperer un nouveau utilisateur
-
-				$this->maVideotheque->ajouteUnClient($_POST['nomClient'], $_POST['prenomClient'], $_POST['emailClient'], $_POST['dateAbonnementClient'], $_POST['login'], $_POST['password']);
+				$nom = $_POST['nomClient'];
+				$prenom = $_POST['prenomClient'];
+				$email = $_POST['emailClient'];
+				$dateAbonnement = $_POST['dateAbonnementClient'];
+				$login = $_POST['login'];
+				$password = $_POST['password'];
+				$this->maVideotheque->ajouteUnClient($nom, $prenom, $email, $dateAbonnement, $login, $password);
 				echo " JesusisCOntroleur++";
 
 				break;
