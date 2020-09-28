@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //include du fichier GESTION pour les objets (Modeles)
 include 'Modeles/gestionVideo.php';
 
@@ -104,6 +104,7 @@ class Controleur
 				// ici il faut pouvoir recuperer un nouveau utilisateur
 
 				$this->maVideotheque->ajouteUnClient($_POST['nomClient'], $_POST['prenomClient'], $_POST['emailClient'], $_POST['dateAbonnementClient'], $_POST['login'], $_POST['password']);
+				echo " JesusisCOntroleur++";
 
 				break;
 
