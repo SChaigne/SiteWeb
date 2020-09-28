@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class accesBD
 	{
@@ -107,7 +107,7 @@ class accesBD
 
 		$requete = $this->conn->prepare("INSERT INTO CLIENT (idClient ,nomClient, prenomClient, emailClient, dateAbonnementClient, loginClient, pwdClient, actif) VALUES (?,?,?,?,?,?,?,?)");
 		//définition de la requête SQL
-		$requete->bindValue(1,$unIdClient);
+		$requete->bindValue(1,$sonId);
 		$requete->bindValue(2,$unNomClient);
 		$requete->bindValue(3,$unPrenomClient);
 		$requete->bindValue(4,$unEmailClient);
@@ -116,7 +116,7 @@ class accesBD
 		$requete->bindValue(7,$unPwdClient);
 		$requete->bindValue(8,0);
 
-
+		echo " Je suis accesBD++";
 
 		//exécution de la requête SQL
 		if(!$requete->execute())
