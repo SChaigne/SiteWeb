@@ -13,12 +13,11 @@ Class conteneurClient
 		}
 
 	//METHODE AJOUTANT UN Client------------------------------------------------------------------------------
-	public function ajouteUnClient($unIdClient, $unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement, $unLoginClient, $unPwdClient)
+	public function ajouteUnClient($unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement, $unLoginClient, $unPwdClient)
 		{
 		$unIdClient = $this->nbClient() + 1;
 		$unClient = new client($unIdClient, $unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement,$unLoginClient, $unPwdClient);
 		$this->lesClients->append($unClient);
-		echo "JE SUIS conteneurClient++";
 		}
 
 	//METHODE RETOURNANT LE NOMBRE De clients-------------------------------------------------------------------------------

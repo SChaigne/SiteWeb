@@ -178,7 +178,7 @@ Class gestionVideo
 		$sonNumero = $this->maBD->insertClient($unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement, $unLoginClient, $unPasswordClient);
 		//instanciation du client et ajout de celui-ci dans la collection
 		$this->tousLesClients->ajouteUnClient($unNomClient, $unPrenomClient, $unEmailClient, $uneDateAbonnement, $unLoginClient, $unPasswordClient);
-		echo " Jsuis gestionVideo++";
+		
 		}
 	//METHODE INSERANT UN FILM----------------------------------------------------------------------------------------------------------
 	public function ajouteUnFilm($unIdFilm,$unTitreFilm, $unRealisateurFilm, $unIdGenre,$uneDureeFilm)

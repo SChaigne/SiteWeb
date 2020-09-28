@@ -105,7 +105,7 @@ class accesBD
 		//génération automatique de l'identifiant
 		$sonId = $this->donneProchainIdentifiant("client","idClient");
 
-		$requete = $this->conn->prepare("INSERT INTO CLIENT (idClient ,nomClient, prenomClient, emailClient, dateAbonnementClient, loginClient, pwdClient, actif) VALUES (?,?,?,?,?,?,?,?)");
+		$requete = $this->conn->prepare("INSERT INTO CLIENT (idClient ,nomClient, prenomClient, emailClient, dateAbonnementClient, login, pwd, actif) VALUES (?,?,?,?,?,?,?,?)");
 		//définition de la requête SQL
 		$requete->bindValue(1,$sonId);
 		$requete->bindValue(2,$unNomClient);
@@ -115,8 +115,6 @@ class accesBD
 		$requete->bindValue(6,$unLoginClient);
 		$requete->bindValue(7,$unPwdClient);
 		$requete->bindValue(8,0);
-
-		echo " Je suis accesBD++";
 
 		//exécution de la requête SQL
 		if(!$requete->execute())
@@ -325,7 +323,7 @@ class accesBD
 		//$prochainId[0]=0;
 		//définition de la requête SQL
 		$stringQuery = $this->specialCase("SELECT * FROM ",$uneTable);
-		echo $stringQuery;
+		//echo $stringQuery
 		$requete = $this->conn->prepare($stringQuery);
 		$requete->bindValue(1,$unIdentifiant);
 

@@ -109,7 +109,7 @@ class Controleur
 				$login = $_POST['login'];
 				$password = $_POST['password'];
 				$this->maVideotheque->ajouteUnClient($nom, $prenom, $email, $dateAbonnement, $login, $password);
-				echo " JesusisCOntroleur++";
+				
 
 				break;
 
