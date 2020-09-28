@@ -103,8 +103,8 @@ class Controleur
 			case 'nouveauLogin' :
 				// ici il faut pouvoir recuperer un nouveau utilisateur
 
-				insertClient($_POST['nomClient'], $_POST['prenomClient'], $_POST['emailClient'], $_POST['dateAbonnementClient'], $_POST['login'], $_POST['password']);
-				
+				$this->maVideotheque->ajouteUnClient($_POST['nomClient'], $_POST['prenomClient'], $_POST['emailClient'], $_POST['dateAbonnementClient'], $_POST['login'], $_POST['password']);
+
 				break;
 
 			//CAS verifier un utilisateur ------------------------------------------------------------------------------
