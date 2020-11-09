@@ -107,6 +107,40 @@ Class conteneurClient
 			}
 		return $trouve;
 	}
+
+	public function verificationExistanceIdentifiant($unLogin)
+	{
+		//echo $unLogin."<br/>";
+		//echo $unPassword."<br/>";
+		//initialisation d'un booléen (on part de l'hypothèse que le client n'existe pas)
+		$trouve=0;
+		//création d'un itérateur sur la collection lesClients
+		$iClient = $this->lesClients->getIterator();
+		//TQ on a pas trouvé le client et que l'on est pas arrivé au bout de la collection
+		while ((!$trouve)&&($iClient->valid()))
+			{
+			//SI le login du client courant correspond au login passé en paramètre
+			// On supprime les caractères invisibles que le SGBD ajoute pour compenser puisqu'on utilise des char(n)
+			$testLogin = trim($iClient->current()->getLoginClient());
+			//$test = $testLogin===$unLogin;
+			//$test2 = $testPassword===$unPassword;
+			//echo "Login : ".strcmp($unLogin,$testLogin)."<br/>".$test;
+			//echo "Password : ".strcmp($unPassword,$testPassword)."<br/>".$test2;
+			//On test avec la fonction strcmp
+			if (strcmp($unLogin ,$testLogin)===0)
+				{
+				//maj du booléen
+				$trouve=1;
+				}
+			//SINON on passe au client suivant
+			else
+				{
+					$iClient->next();
+				}
+			}
+		return $trouve;
+	}
+
 	}
 
 ?>

@@ -108,9 +108,15 @@ class Controleur
 				$dateAbonnement = $_POST['dateAbonnementClient'];
 				$login = $_POST['login'];
 				$password = $_POST['password'];
-				$this->maVideotheque->ajouteUnClient($nom, $prenom, $email, $dateAbonnement, $login, $password);
-				
+				$verifIdentifiant = $this->maVideotheque->VerifIdentifiant($login);
+				echo $verifIdentifiant;
 
+				if ($verifIdentifiant == 1){
+					$this->maVideotheque->ajouteUnClient($nom, $prenom, $email, $dateAbonnement, $login, $password);
+				}
+				else{
+					echo"Identifiants déjà utilisé";
+				}
 				break;
 
 			//CAS verifier un utilisateur ------------------------------------------------------------------------------
