@@ -1,4 +1,4 @@
 # SiteWeb
 <div align="center">
-	<img src="animgithub.svg">
+	<img src="header.svg">
 </div>
