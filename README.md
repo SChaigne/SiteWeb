@@ -1,2 +1,4 @@
 # SiteWeb
-<animgithub></animgithub>
+<div align="center">
+	<img src="animgithub.svg">
+</div>
